@@ -2,6 +2,18 @@ body {
     margin: 0%;
 }
 
+footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: rgba(0, 128, 0, 0.386);
+   color: black;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   text-align: center;
+   border: 1px solid green;
+}
+
 .header {
     text-align: center;
     border: 2px solid green;
@@ -31,4 +43,48 @@ body {
 .btn-primary {
     margin-right: 2%;
     margin-left: 2%;
+}
+
+/* Remove arrow keys from roll input */
+/* Chrome */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#findResultHeading {
+    position: relative;
+    top: 22%;
+    left: 22%;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.searchForm {
+    position: relative;
+    top: 22%;
+    left: 22%;
+    /* font-family:Arial, Helvetica, sans-serif; */
+}
+
+.searchForm > input {
+    margin-bottom: 2%;
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+#resultHeading {
+    text-align: center;
+    margin-top: 5%;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+.resultRows {
+    margin-left: 35%;
+    margin-top: 4%;
 }

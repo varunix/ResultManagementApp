@@ -1,3 +1,7 @@
 module.exports.findResult = (req, res) => {
-    res.send('<h1>This is students page!</h1>')
+    res.render('findResult');
+}
+
+module.exports.studentResult = (req, res) => {
+    res.render('studentResult');
 }

@@ -1,0 +1,10 @@
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<%- include('./_header.ejs') %>
+<h2 id="findResultHeading">Find Result</h2>
+<form action="/students/studentResult" method="get" class="searchForm">
+    <input type="number" name="Roll" placeholder="Enter your roll number" required style="width: 55%; height: 5%;"><br>
+    <input type="text" name="Name" placeholder="Enter your name" required style="width: 55%; height: 5%; margin-bottom: 5%;"><br>
+    <input type="submit" class="btn btn-primary btn-lg" value="Submit" style="width: 10%; margin-left: 12%; margin-right: 5%; align-item: center;">
+    <input type="reset" class="btn btn-primary btn-lg" value="Reset" style="width: 10%; margin-left: 5%;">
+</form>
