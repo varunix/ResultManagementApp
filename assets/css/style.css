@@ -1,5 +1,5 @@
 body {
-    margin: 0%;
+    width: 100%;
 }
 
 footer {
@@ -16,6 +16,7 @@ footer {
 
 .header {
     text-align: center;
+    /* width: 100%; */
     border: 2px solid green;
     padding: 1%;
     background-color: rgba(0, 128, 0, 0.386);
@@ -59,23 +60,21 @@ input[type=number] {
 }
 
 #findResultHeading {
-    position: relative;
-    top: 22%;
-    left: 22%;
+    /* position: relative; */
+   margin-top: 10%;
+   text-align: center;
     font-family:Arial, Helvetica, sans-serif;
 }
 
 .searchForm {
-    position: relative;
-    top: 22%;
-    left: 22%;
+    /* position: relative; */
+    margin-top: 2%;
+    margin-left: 30%;
     /* font-family:Arial, Helvetica, sans-serif; */
 }
 
 .searchForm > input {
     margin-bottom: 2%;
-    margin-right: 4px;
-    margin-left: 4px;
 }
 
 #resultHeading {
@@ -87,4 +86,9 @@ input[type=number] {
 .resultRows {
     margin-left: 35%;
     margin-top: 4%;
+}
+
+.back {
+    width: 3%;
+    margin-left: 1%;
 }
