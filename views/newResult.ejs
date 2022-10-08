@@ -1,0 +1,18 @@
+<%- include('./_header.ejs') %>
+<%- include('./_backbutton.ejs') %>
+
+<h1 style="margin-left:20%;">Add New Result</h1>
+<form action="/teachers/newResult" method="post" class="addResult">
+    <label for="fname">Roll No.:</label>
+    <input type="text" name="roll" placeholder="Enter your roll number" required"><br>
+    <label for="fname">Name:</label>
+    <input type="text" name="name" placeholder="Enter your name" required><br>
+    <label for="fname">D.O.B: </label>
+    <input type="Date" name="dob" required><br>
+    <label for="fname">Score:</label>
+    <input type="number" name="score" required style="margin-bottom:2%;"><br>
+    <button type="submit" class="btn btn-primary" style="margin-left: 18%; width: 10%;">Submit</button>
+    <button type="reset" class="btn btn-outline-dark" style="margin-left: 7%; width: 10%">Clear</button>
+</form>
+
+<%- include('./_footer.ejs') %>

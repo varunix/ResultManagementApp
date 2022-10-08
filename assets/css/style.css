@@ -92,3 +92,27 @@ input[type=number] {
     width: 3%;
     margin-left: 1%;
 }
+
+#createResultButton {
+    position: absolute;
+    right: 20%;
+    top: 20%;
+    width: 10%;
+    height: 7%;
+}
+
+.addResult {
+    margin-left: 30%;
+}
+
+.addResult > input {
+    margin-top: 2%;
+    width: 50%;
+}
+
+.addResult > label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    font-size: larger;
+}

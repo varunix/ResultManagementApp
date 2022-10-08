@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const port = 8000;
+const bodyParser = require('body-parser');
+const db = require('./configs/mongoose');
 
 //setting up views
 app.set('views', './views');
