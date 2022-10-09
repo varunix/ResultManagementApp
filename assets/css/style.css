@@ -132,3 +132,87 @@ input[type=number] {
     text-align: end;
     margin-left: 5%;
 }
+
+.buttonLogout {
+    padding: 5px 15px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #e2d305;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .buttonLogout:hover {background-color: #8d8e3e}
+  
+  .buttonLogout:active {
+    background-color: #f9b109;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  .btnSuccess {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .btnSuccess:hover {background-color: #3e8e41}
+  
+  .btnSuccess:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  .btnSubmit {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #0452aa;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .btnSubmit:hover {background-color: #3e468e}
+  
+  .btnSubmit:active {
+    background-color: #493e8e;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  .btnReset {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #aa3904;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .btnReset:hover {background-color: #8e563e}
+  
+  .btnReset:active {
+    background-color: #8e563e;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }

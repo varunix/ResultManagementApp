@@ -1,3 +1,8 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-<h1 class="back" onclick="history.back()"><i class="fa fa-thin fa-backward"></i></h1>
+<h1 class="back" onclick="history.back()" onmouseover="mouseOver()" onmouseout="mouseOut()"><i class="fa fa-thin fa-backward"></i></h1>
+<button type="button" id="toolTip" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Back" style="margin-left: 1%; visibility: hidden;">
+    Back
+</button>
+
+<script src="/js/tooltip.js"></script>

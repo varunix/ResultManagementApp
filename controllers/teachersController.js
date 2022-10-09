@@ -1,7 +1,15 @@
 const Result = require('../models/result');
 
 module.exports.home = (req, res) => {
-    res.render('teacherResult');
+    Result.find({}, (err, result) => {
+        if(err) {
+            console.log('Error in getting all results', err); return;
+        }
+
+        return res.render('teacherResult', {
+            result: result
+        });
+    });
 }
 
 module.exports.newResult = (req, res) => {
