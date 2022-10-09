@@ -61,7 +61,7 @@ input[type=number] {
 
 #findResultHeading {
     /* position: relative; */
-   margin-top: 10%;
+   margin-top: 5%;
    text-align: center;
     font-family:Arial, Helvetica, sans-serif;
 }
@@ -115,4 +115,20 @@ input[type=number] {
     width: 100px;
     text-align: right;
     font-size: larger;
+}
+
+.resultRows {
+    /* border: 1px solid red; */
+    width: 10%;
+    text-align: end;
+    display: inline-block;
+    color: gray;
+}
+
+.resultRowsValues {
+    display: inline-block;
+    width: 10%;
+    /* border: 1px solid blue; */
+    text-align: end;
+    margin-left: 5%;
 }

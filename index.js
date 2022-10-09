@@ -4,6 +4,9 @@ const port = 8000;
 const bodyParser = require('body-parser');
 const db = require('./configs/mongoose');
 
+//middlewares
+app.use(bodyParser.urlencoded({ extended: false }))
+
 //setting up views
 app.set('views', './views');
 app.set('view engine', 'ejs');
