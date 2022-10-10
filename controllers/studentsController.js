@@ -1,9 +1,9 @@
 const Result = require('../models/result');
+const dayjs = require('dayjs');
 
 module.exports.findResult = (req, res) => {
-    res.render('findResult');
+    return res.render('findResult');
 }
-const dayjs = require('dayjs');
 
 module.exports.studentResult = (req, res) => {
     Result.findOne({roll: req.query.roll}, function(err, result) {
@@ -12,19 +12,22 @@ module.exports.studentResult = (req, res) => {
             return;
         }
 
-        if(!result) {
-            console.log("Result not found!"); return;
+        else if(!result) {
+            req.flash('error', 'Result Not Found');
+            return res.redirect('back');
         }
-        
-        if(req.query.name === result.name){
+
+        else if(req.query.name === result.name){
             let date = dayjs(result.dob).format("DD-MM-YYYY");
             return res.render('studentResult', {
                 result: result,
                 dob: date
             });
         }
+
         else {
-            console.log("Result not found!"); return;
+            req.flash('error', 'Result Not Found');
+            return res.redirect('back');
         }
     });
 }

@@ -1,5 +1,4 @@
 const Result = require('../models/result');
-const dayjs = require('dayjs');
 
 module.exports.home = (req, res) => {
     Result.find({}, (err, result) => {
