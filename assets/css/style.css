@@ -79,13 +79,13 @@ input[type=number] {
 
 #resultHeading {
     text-align: center;
-    margin-top: 5%;
+    margin-top: 4%;
     font-family:Georgia, 'Times New Roman', Times, serif
 }
 
 .resultRows {
     margin-left: 35%;
-    margin-top: 4%;
+    margin-top: 1%;
 }
 
 .back {
@@ -95,10 +95,10 @@ input[type=number] {
 
 #createResultButton {
     position: absolute;
-    right: 20%;
-    top: 20%;
-    width: 10%;
-    height: 7%;
+    right: 5%;
+    top: 13%;
+    width: 7%;
+    height: 5%;
 }
 
 .addResult {
@@ -118,7 +118,6 @@ input[type=number] {
 }
 
 .resultRows {
-    /* border: 1px solid red; */
     width: 10%;
     text-align: end;
     display: inline-block;
@@ -128,7 +127,6 @@ input[type=number] {
 .resultRowsValues {
     display: inline-block;
     width: 10%;
-    /* border: 1px solid blue; */
     text-align: end;
     margin-left: 5%;
 }
@@ -155,7 +153,7 @@ input[type=number] {
   }
 
   .btnSuccess {
-    padding: 15px 25px;
+    padding: 5px 15px;
     font-size: 24px;
     text-align: center;
     cursor: pointer;
@@ -215,4 +213,25 @@ input[type=number] {
     background-color: #8e563e;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .resultTable {
+    width: 70%;
+    margin: auto;
   }

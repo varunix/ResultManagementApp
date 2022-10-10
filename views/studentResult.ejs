@@ -8,17 +8,8 @@
 <h4 class="resultRows">Name :</h4>
 <h4 class="resultRowsValues"><%= result.name %></h4>
 <h4 class="resultRows" id="dobInput" data-value="<%= result.dob %>">D.O.B :</h4>
-<h4 class="resultRowsValues" id="dobInputValue"></h4>
+<h4 class="resultRowsValues"><%= dob %></h4>
 <h4 class="resultRows">Score :</h4>
 <h4 class="resultRowsValues"><%= result.score %></h4>
 
 <%- include('./_footer.ejs') %>
-
-<script
-      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
-      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    >
-    </script>
-<script src="/js/dateFormat.js"></script>

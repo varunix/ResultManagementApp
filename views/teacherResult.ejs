@@ -1,8 +1,8 @@
 <%- include('./_header.ejs') %>
 <%- include('./_backbutton.ejs') %>
 
-<!-- <a href="/teachers/newResult"><button type="button" id="createResultButton" class="btnSuccess">Success</button></a> -->
-<table>
+<a href="/teachers/newResult"><button type="button" id="createResultButton" class="btnSuccess">Add</button></a>
+<table class="resultTable">
     <tr>
         <th>Roll No.</th>
         <th>Name</th>
@@ -10,20 +10,12 @@
         <th>Score</th>
         <th>Actions</th>
     </tr>
-    <tr>
-        <td>1</td>
-        <td><%= result[0].name %></td>
-        <td><%= result[0].dob %></td>
-        <td><%= result[0].score %></td>
-        <td>Action</td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td><%= result[1].name %></td>
-        <td><%= result[1].dob %></td>
-        <td><%= result[1].score %></td>
-        <td>Action</td>
-    </tr>
+    <% for(i of result) { %>
+        <tr>
+            <%- include('./_tableRows.ejs') %>
+        </tr>
+    <%}%>
 </table>
+<script src="/js/dateFormatTeachers.js"></script>
 
 <%- include('./_footer.ejs') %>

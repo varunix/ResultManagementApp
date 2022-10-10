@@ -3,6 +3,7 @@ const Result = require('../models/result');
 module.exports.findResult = (req, res) => {
     res.render('findResult');
 }
+const dayjs = require('dayjs');
 
 module.exports.studentResult = (req, res) => {
     Result.findOne({roll: req.query.roll}, function(err, result) {
@@ -16,8 +17,10 @@ module.exports.studentResult = (req, res) => {
         }
         
         if(req.query.name === result.name){
+            let date = dayjs(result.dob).format("DD-MM-YYYY");
             return res.render('studentResult', {
-                result: result
+                result: result,
+                dob: date
             });
         }
         else {

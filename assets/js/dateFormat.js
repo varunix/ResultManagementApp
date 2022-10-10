@@ -1,9 +1,7 @@
-var dobInput = document.getElementById("dobInput");
-var dobInputValue = document.getElementById("dobInputValue");
+var dobInput = document.getElementById("editDob");
 var date = new Date(dobInput.getAttribute("data-value"));
 var d = date.getDate();
 var m = date.getMonth();
 m += 1;
 var y = date.getFullYear();
-console.log(d + "-" + m + "-" + y);
-dobInputValue.innerHTML = d + "-" + m + "-" + y;
+dobInput.innerText = d + "-" + m + "-" + y;

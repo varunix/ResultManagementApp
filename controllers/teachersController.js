@@ -1,13 +1,14 @@
 const Result = require('../models/result');
+const dayjs = require('dayjs');
 
 module.exports.home = (req, res) => {
     Result.find({}, (err, result) => {
         if(err) {
             console.log('Error in getting all results', err); return;
         }
-
+        
         return res.render('teacherResult', {
-            result: result
+            result: result,
         });
     });
 }
@@ -33,5 +34,43 @@ module.exports.createForm = (req, res) => {
         } else {
             return res.redirect('back');
         }
+    });
+}
+
+module.exports.delete = (req, res) => {
+    Result.findOneAndDelete({ _id: req.params.id }, function(err, result) {
+        if(!err && result) {
+            console.log(result);
+            console.log("Result successfully deleted");
+        }
+        else {
+            console.log("error");
+        }
+        res.redirect("back");
+    });
+}
+
+module.exports.editForm = (req, res) => {
+    arr = [];
+    Result.findById(req.params.id, (err, result) => {
+        if(err) {
+            console.log("Unable to find result for edit form", err);
+            return;
+        }
+
+        return res.render('editResult', {
+            result: result
+        });
+    });
+}
+
+module.exports.editResult = (req, res) => {
+    Result.findOneAndUpdate({ roll: req.body.roll }, req.body, {new: true}, (err, result) => {
+        if(err) {
+            console.log("Error in updating the result", err);
+            return;
+        }
+
+        return res.redirect('/teachers');
     });
 }
