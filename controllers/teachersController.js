@@ -73,3 +73,19 @@ module.exports.editResult = (req, res) => {
         return res.redirect('/teachers');
     });
 }
+
+module.exports.signIn = (req, res) => {
+    return res.render('sign_in');
+}
+
+module.exports.signUp = (req, res) => {
+    return res.render('sign_up');
+}
+
+module.exports.createSession = (req, res) => {
+    //todo
+}
+
+module.exports.create = (req, res) => {
+    //todo
+}

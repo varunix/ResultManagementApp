@@ -1,21 +1,44 @@
 const express = require('express');
-const session = require('express-session');
 const app = express();
+const session = require('express-session');
 const port = 8000;
 const bodyParser = require('body-parser');
 const db = require('./configs/mongoose');
 const flash = require('connect-flash');
 const customMware = require('./configs/middleware');
+const mongoose = require('mongoose');
+const MongoStore = require('connect-mongo');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+var crypto = require('crypto');
+
+//environmental variable
+require('dotenv').config();
 
 //middlewares
 app.use(session({
+    name: 'resultmanagement',
     secret:'flashmessage',
-    saveUninitialized: true,
-    resave: true
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+        maxAge: (1000*60*100)
+    },
+    store: MongoStore.create({
+        mongoUrl: 'mongodb://localhost/resultmanagement',
+        autoremove: 'disabled'
+    },
+    function(err) {
+        console.log(err || 'connect-mongod setup ok');
+    })
 }));
 app.use(flash());
 app.use(customMware.setFlash);
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+//Setting up mongoclient for storing sessions in mongodb
+const connection = mongoose.createConnection(process.env.DB_STRING);
 
 //setting up views
 app.set('views', './views');
