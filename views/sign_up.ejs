@@ -2,9 +2,10 @@
 <%- include('./_backbutton.ejs') %>
 
 <h1 class="alignHeading" style="margin-bottom: 1%;">Sign Up</h1>
-<form action="/teachers/create" class="alignForm">
+<form action="/teachers/create" method="post" class="alignForm">
     <input type="email" name="email" placeholder="Email" required style="width: 30%; height: 5%; text-align: center;"><br>
     <input type="password" name="password" placeholder="Password" required style="width: 30%; height: 5%; text-align: center;"><br>
+    <input type="password" name="confirm_password" placeholder="Confirm Password" required style="width: 30%; height: 5%; text-align: center;"><br>
     <input type="submit" value="Sign Up" class="btnSubmit">
     <input type="reset" value="Clear" class="btnReset">
 </form>

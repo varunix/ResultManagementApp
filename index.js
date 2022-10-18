@@ -16,6 +16,10 @@ var crypto = require('crypto');
 require('dotenv').config();
 
 //middlewares
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+//this is basic expression session initialization
 app.use(session({
     name: 'resultmanagement',
     secret:'flashmessage',
@@ -32,13 +36,14 @@ app.use(session({
         console.log(err || 'connect-mongod setup ok');
     })
 }));
+
+//init passport on every route call
+app.use(passport.initialize());
+//allowing passport to use express-session
+app.use(passport.session());
 app.use(flash());
 app.use(customMware.setFlash);
-app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-
-//Setting up mongoclient for storing sessions in mongodb
-const connection = mongoose.createConnection(process.env.DB_STRING);
+require('./configs/passport-local-strategy');
 
 //setting up views
 app.set('views', './views');

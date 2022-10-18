@@ -6,3 +6,25 @@
 
 <link href="/css/style.css" rel="stylesheet" type="text/css">
 <h1 class="header">Result Management System<a href="/logout"><button class="buttonLogout" style="position: absolute; right: 15px; width: 7%;">Logout</button></a></h1>
+<script>
+    <% if(flash.success && flash.success.length > 0) {%>
+        new Noty({
+            theme: 'relax',
+            text: '<%= flash.success %>',
+            type: 'success',
+            layout: 'topRight',
+            timeout: 1500
+        }).show();
+    <%}%>
+
+    <% if(flash.error && flash.error.length > 0) {%>
+        new Noty({
+            theme: 'relax',
+            text: '<%= flash.error %>',
+            type: 'error',
+            layout: 'topRight',
+            timeout: 1500
+        }).show();
+    <%}%>
+    
+</script>

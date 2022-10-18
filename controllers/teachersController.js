@@ -1,4 +1,5 @@
 const Result = require('../models/result');
+const Auth = require('../models/teacher');
 
 module.exports.home = (req, res) => {
     Result.find({}, (err, result) => {
@@ -50,7 +51,6 @@ module.exports.delete = (req, res) => {
 }
 
 module.exports.editForm = (req, res) => {
-    arr = [];
     Result.findById(req.params.id, (err, result) => {
         if(err) {
             console.log("Unable to find result for edit form", err);
@@ -83,9 +83,35 @@ module.exports.signUp = (req, res) => {
 }
 
 module.exports.createSession = (req, res) => {
-    //todo
+    req.flash('success', 'Logged in successfully');
+    return res.redirect('/teachers');
 }
 
 module.exports.create = (req, res) => {
-    //todo
+
+    if(req.body.password != req.body.confirm_password) {
+        req.flash('error', 'Password does not match with confirm password');
+        return res.redirect('back');
+    }
+
+    Auth.findOne({email: req.body.email}, (err, user) => {
+        if(err) {
+            console.log('Error in create user');
+            return;
+        }
+
+        if(!user) {
+            Auth.create(req.body, (err, user) => {
+                if(err) {
+                    console.log('Error in creating user while signing up');
+                    return;
+                }
+
+                return res.redirect('/teachers/authPage');
+            });
+        } else {
+            req.flash('error', 'User already exist');
+            return res.redirect('back');
+        }
+    });
 }

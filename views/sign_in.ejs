@@ -2,11 +2,11 @@
 <%- include('./_backbutton.ejs') %>
 
 <h1 class="alignHeading" style="margin-bottom: 1%;">Sign In</h1>
-<form action="/teachers/create-session" class="alignForm">
+<form action="/teachers/create-session" method="post" class="alignForm">
     <input type="email" name="email" placeholder="Email" required style="width: 30%; height: 5%; text-align: center;"><br>
     <input type="password" name="password" placeholder="Password" required style="width: 30%; height: 5%; text-align: center;"><br>
     <input type="submit" value="Sign In" class="btnSubmit">
 </form>
-<h4 style="margin-left: 2%">If you're unable to login then you can try signup <a href="/teachers/signUp">here...</a></h4>
+<h4 style="margin-left: 2%">If you're unable to login then you can try sign-up <a href="/teachers/signUp">here...</a></h4>
 
 <%- include('./_footer.ejs') %>
