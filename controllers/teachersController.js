@@ -75,10 +75,18 @@ module.exports.editResult = (req, res) => {
 }
 
 module.exports.signIn = (req, res) => {
+    if(req.isAuthenticated()) {
+        return res.redirect('/teachers');
+    }
+    
     return res.render('sign_in');
 }
 
 module.exports.signUp = (req, res) => {
+    if(req.isAuthenticated()) {
+       return res.redirect('/teachers');
+    }
+
     return res.render('sign_up');
 }
 
