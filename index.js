@@ -8,7 +8,7 @@ const flash = require('connect-flash');
 const customMware = require('./configs/middleware');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo');
-const passport = require('passport');
+const passport = require('./configs/passport-local-strategy');
 const LocalStrategy = require('passport-local').Strategy;
 var crypto = require('crypto');
 
@@ -41,9 +41,9 @@ app.use(session({
 app.use(passport.initialize());
 //allowing passport to use express-session
 app.use(passport.session());
+app.use(passport.setAuthenticatedUser);
 app.use(flash());
 app.use(customMware.setFlash);
-require('./configs/passport-local-strategy');
 
 //setting up views
 app.set('views', './views');

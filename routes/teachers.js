@@ -1,12 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const teachersController = require('../controllers/teachersController');
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
+const passport = require('../configs/passport-local-strategy');
 
-router.get('/', teachersController.home);
+router.get('/', passport.checkAuthentication, teachersController.home);
 router.get('/newResult', teachersController.newResult);
-router.post('/newResult', teachersController.createForm);
+router.post('/newResult', passport.checkAuthentication,teachersController.createForm);
 router.get('/delete/:id', teachersController.delete);
 router.get('/edit/:id', teachersController.editForm);
 router.post('/editResult', teachersController.editResult);
