@@ -1,5 +1,6 @@
 const Result = require('../models/result');
 const Auth = require('../models/teacher');
+const loginMailer = require('../mailers/login_mailer');
 
 module.exports.home = (req, res) => {
     Result.find({}, (err, result) => {
@@ -111,10 +112,11 @@ module.exports.create = (req, res) => {
         if(!user) {
             Auth.create(req.body, (err, user) => {
                 if(err) {
-                    console.log('Error in creating user while signing up');
+                    console.log('Error in creating user while signing up', err);
                     return;
                 }
 
+                loginMailer.mailOptions(user.email);
                 return res.redirect('/teachers/authPage');
             });
         } else {

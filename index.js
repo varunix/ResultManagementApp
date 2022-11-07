@@ -15,7 +15,7 @@ var crypto = require('crypto');
 //environmental variable
 require('dotenv').config();
 
-//middlewares
+//Body Parser Middleware
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
